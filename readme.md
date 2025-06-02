@@ -1,4 +1,4 @@
-To install Playwright, you can follow these steps:
+## To install Playwright, you can follow these steps:
 
 1. Install Node.js if you haven't already.
 2. Create a directory of your choice e.g. onskeyskyen-tests and then move to that directory
@@ -12,6 +12,66 @@ To install Playwright, you can follow these steps:
  
 
 For more detailed instructions, you can refer to the Playwright documentation.
+
+## The automation task includes 2 spec files covering E2E scenarios for the following tests
+
+1. Add a friend, confirm a friend from pending request and then remove the friend from the list
+2. Create a Wishlist, add a wish in that wishlist, delete Wish and archive the Wishlist
+
+## Project structure includes follwoing 
+
+├── env
+│   └── local.env
+├── fixtures
+│   ├── FriendFixture.ts
+│   ├── LoginFixture.ts
+│   └── WishListFixture.ts
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── FriendPage.ts
+│   ├── GiftGeneratorPage.ts
+│   ├── HomePage.ts
+│   ├── LanguageSelectorPage.ts
+│   ├── locators.json
+│   ├── LoginPage.ts
+│   ├── OverviewPage.ts
+│   ├── ProductOverviewPage.ts
+│   ├── ProfilePage.ts
+│   └── WishlistOverviewPage.ts
+├── playwright-report
+│   └── index.html
+├── playwright.config.ts
+├── readme.md
+├── storageState.json
+├── test-results
+├── tests
+│   ├── friend.spec.ts
+│   ├── friend.spec.ts-snapshots
+│   │   ├── friend-card-chromium-darwin.png
+│   │   ├── friend-card-overview-chromium-darwin.png
+│   │   ├── friends-list-after-removal-chromium-darwin.png
+│   │   └── friends-list-initial-chromium-darwin.png
+│   └── wishlist.spec.ts
+├── tsconfig.json
+└── utils
+    ├── global-setup.ts
+    ├── LoginHelper.ts
+    └── StringUtil.ts
+
+## Implementation includes :
+
+1. Parallel execution enabled in playwright config file (playwright.config.ts)
+2. Authentication handled using global-setup.ts and stored in storageState.json
+3. Playwright fixtures FriendFixture.ts and WishListFixture.ts for both the specs
+4. Github action workflow created using playwright.yml file
+5. Screenshot assertion added as a trial (haven't implemented this before) but not sure about its exact use as it fails the test first time if snapshots are not there. using --update-snapshots argument while running tests fixes that
+
+## Execution 
+Execute the spec files by running the following command
+    ``` npx playwright test ```  or  ``` npx playwright test --update-snapshots``` 
+
+
 
 
 
