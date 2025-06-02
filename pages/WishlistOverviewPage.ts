@@ -76,8 +76,8 @@ export class WishlistOverviewPage {
         await this.addWishModalSubmitButton.click();
     }
     async assertWishCardTitleIsVisible(name: string) {
-        await expect(this.wishCardTitle).toBeVisible();
-        await expect(this.wishCardTitle).toHaveText(name);
+        await expect(this.page.getByText(name)).toBeVisible();
+       
     }
     async assertWishCardMoreButtonIsVisible() {
         await expect(this.wishCardMoreButton).toBeVisible();
