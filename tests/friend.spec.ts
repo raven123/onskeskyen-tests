@@ -11,14 +11,13 @@ const LAST_NAME = 'Test 2';
 const SEARCH_TEXT = FIRST_NAME + ' ' + LAST_NAME;
 const language = 'English';
 
-
-test('Add a friend, confirm the request and then remove friend from the list', async ({ friendPage,overviewPage,profilePage,loginPage,languageSelectorPage,homePage,page }) => {
+test('Add a friend, confirm the request and then remove friend from the list',{tag: ['@smoke', '@regression']}, async ({ friendPage,overviewPage,profilePage,loginPage,languageSelectorPage,homePage,page }) => {
  
   await overviewPage.navigate();
   await overviewPage.clickFriendsButton();  
 
   await friendPage.assertHeader();
-
+  await friendPage.removeFriendIfExists(SEARCH_TEXT);
   // screenshot assertion to store initial state before adding a friend
   await expect(page).toHaveScreenshot('friends-list-initial.png');
 

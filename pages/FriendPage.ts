@@ -60,7 +60,6 @@ export class FriendPage {
 
     async assertFriendNameIsVisible(name: string) {
         await expect(this.friendName).toBeVisible();
-        await expect(this.friendName).toBeVisible();
         await expect(this.friendName).toHaveText(name);
     }
 
@@ -127,5 +126,17 @@ export class FriendPage {
 
     async assertFriendCardIsNotVisible() {
         await expect(this.friendCard).toBeHidden();
+    }
+
+    async removeFriendIfExists(name: string) {
+        if (await this.friendName.isVisible() && (await this.friendName.textContent()) === name) {
+            await this.assertFriendCardIsVisible();
+            await this.clickMoreButton();
+            await this.assertRemoveFriendButtonIsVisible();
+            await this.clickRemoveFriendButton();
+            await this.assertRemoveFriendPopupIsVisible();
+            await this.clickRemoveFriendButtonOnPopup();
+            await this.page.getByText(name).waitFor({ state: 'hidden' });
+        }  
     }
 }

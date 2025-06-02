@@ -8,7 +8,7 @@ var stringUtil = new StringUtil();
 
 dotenv.config({ path: path.resolve(__dirname, '../env/local.env') });
 
-test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the list', async ({ overviewPage, wishlistOverviewPage, page }) => {
+test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the list',{tag:['@smoke','@regression']}, async ({ overviewPage, wishlistOverviewPage, page }) => {
 
   //Add a wishlist 
   await overviewPage.navigate();
