@@ -2,25 +2,26 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 
 export class WishlistOverviewPage {
-    readonly page: Page;
-    readonly moreButton: Locator;
-    readonly newWishCard: Locator;
-    readonly addWishPopupHeader: Locator;
-    readonly addWishPopupUrlInput: Locator;
-    readonly addWishModalHeader: Locator;
-    readonly addWishModalSubmitButton: Locator;
-    readonly addWishModalNameText: Locator;
-    readonly wishCardTitle: Locator;
-    readonly wishCardMoreButton: Locator;
-    readonly deleteWishButton: Locator;
-    readonly deleteWishModalHeader: Locator;
-    readonly deleteWishModalDeleteButton: Locator;
-    readonly deleteWishSuccessMessage: Locator;
-    readonly archiveWishlistButton: Locator;
-    readonly archiveWishlistModalHeader: Locator;
-    readonly archiveWishlistModalArchiveButton: Locator;
-    readonly archiveWishlistSuccessMessage: Locator;
-    readonly addWishSuccessMessage: Locator;
+    private readonly page: Page;
+    private readonly moreButton: Locator;
+    private readonly newWishCard: Locator;
+    private readonly addWishPopupHeader: Locator;
+    private readonly addWishPopupUrlInput: Locator;
+    private readonly addWishModalHeader: Locator;
+    private readonly addWishModalSubmitButton: Locator;
+    private readonly addWishModalNameText: Locator;
+    private readonly wishCardTitle: Locator;
+    private readonly wishCardMoreButton: Locator;
+    private readonly deleteWishButton: Locator;
+    private readonly deleteWishModalHeader: Locator;
+    private readonly deleteWishModalDeleteWishButton: Locator;
+    private readonly deleteWishModalDeleteButton: Locator;
+    private readonly deleteWishSuccessMessage: Locator;
+    private readonly archiveWishlistButton: Locator;
+    private readonly archiveWishlistModalHeader: Locator;
+    private readonly archiveWishlistModalArchiveButton: Locator;
+    private readonly archiveWishlistSuccessMessage: Locator;
+    private readonly addWishSuccessMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -35,6 +36,7 @@ export class WishlistOverviewPage {
         this.wishCardMoreButton = page.locator(locators.wishlistOverviewPage.wishCardMoreButton);
         this.deleteWishButton = page.getByText(locators.wishlistOverviewPage.deleteWishButton);
         this.deleteWishModalHeader = page.locator(locators.wishlistOverviewPage.deleteWishModalHeader);
+        this.deleteWishModalDeleteWishButton = page.locator(locators.wishlistOverviewPage.deleteWishModalDeleteWishButton);
         this.deleteWishModalDeleteButton = page.locator(locators.wishlistOverviewPage.deleteWishModalDeleteButton);
         this.deleteWishSuccessMessage = page.getByText(locators.wishlistOverviewPage.deleteWishSuccessMessage);
         this.archiveWishlistButton = page.getByText(locators.wishlistOverviewPage.archiveWishlistButton);
@@ -77,7 +79,7 @@ export class WishlistOverviewPage {
     }
     async assertWishCardTitleIsVisible(name: string) {
         await expect(this.page.getByText(name)).toBeVisible();
-       
+
     }
     async assertWishCardMoreButtonIsVisible() {
         await expect(this.wishCardMoreButton).toBeVisible();
@@ -122,7 +124,7 @@ export class WishlistOverviewPage {
         await expect(this.archiveWishlistSuccessMessage).toBeVisible();
     }
     async getAddWishModalNameText(): Promise<string> {
-        return await this.addWishModalNameText.textContent();
+        return await this.addWishModalNameText.inputValue();
     }
     async fillAddWishPopupUrlInput(url: string) {
         await this.addWishPopupUrlInput.fill(url);
@@ -130,5 +132,8 @@ export class WishlistOverviewPage {
     async assertAddWishSuccessMessageIsVisible() {
         await expect(this.addWishSuccessMessage).toBeVisible();
         await this.addWishSuccessMessage.waitFor({ state: 'hidden' });
+    }
+    async clickDeleteWishModalDeleteWishButton() {
+        await this.deleteWishModalDeleteWishButton.click();
     }
 }

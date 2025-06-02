@@ -1,13 +1,13 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 export class HomePage {
-    readonly page: Page;
-    readonly title: Locator;
-    readonly changeLanguageButton: Locator;
-    readonly loginButton: Locator;
-    readonly selectedLanguage: Locator;
-    readonly loginWithEmailButton: Locator;
-    readonly declineCookiesButton: Locator;
+    private readonly page: Page;
+    private readonly title: Locator;
+    private readonly changeLanguageButton: Locator;
+    private readonly loginButton: Locator;
+    private readonly selectedLanguage: Locator;
+    private readonly loginWithEmailButton: Locator;
+    private readonly declineCookiesButton: Locator;
 
     //Ønskeskyen |  Danmarks mest populære ønske- og huskeliste : title
     constructor(page: Page) {

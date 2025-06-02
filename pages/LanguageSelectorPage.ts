@@ -2,9 +2,9 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 
 export class LanguageSelectorPage {
-    readonly page: Page;
-    readonly englishSelector: Locator;
-    readonly backButton: Locator;
+    private readonly page: Page;
+    private readonly englishSelector: Locator;
+    private readonly backButton: Locator;
 
     constructor(page: Page) {
         this.page = page;

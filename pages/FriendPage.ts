@@ -2,23 +2,23 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 
 export class FriendPage {
-    readonly page: Page;
-    readonly addFriendButton: Locator;
-    readonly header: Locator;
-    readonly searchField: Locator;
-    readonly friendName: Locator;
-    readonly pendingRequestsButton: Locator;
-    readonly requestsTab: Locator;
-    readonly pendingRequestsCount: Locator;
-    readonly confirmRequestButton: Locator;
-    readonly friendsTab: Locator;
-    readonly friendCard: Locator;
-    readonly moreButton: Locator;
-    readonly removeFriendButton: Locator;
-    readonly removeFriendPopupHeader: Locator;
-    readonly removeFriendButtonOnPopup: Locator;
-    readonly closeButton: Locator;
-    readonly pendingStateText: Locator;
+    private readonly page: Page;
+    private readonly addFriendButton: Locator;
+    private readonly header: Locator;
+    private readonly searchField: Locator;
+    private readonly friendName: Locator;
+    private readonly pendingRequestsButton: Locator;
+    private readonly requestsTab: Locator;
+    private readonly pendingRequestsCount: Locator;
+    private readonly confirmRequestButton: Locator;
+    private readonly friendsTab: Locator;
+    private readonly friendCard: Locator;
+    private readonly moreButton: Locator;
+    private readonly removeFriendButton: Locator;
+    private readonly removeFriendPopupHeader: Locator;
+    private readonly removeFriendButtonOnPopup: Locator;
+    private readonly closeButton: Locator;
+    private readonly pendingStateText: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -58,7 +58,7 @@ export class FriendPage {
         await this.searchField.press('Enter');
     }
 
-    async assertFriendNameIsVisible(name:string) {
+    async assertFriendNameIsVisible(name: string) {
         await expect(this.friendName).toBeVisible();
         await expect(this.friendName).toBeVisible();
         await expect(this.friendName).toHaveText(name);

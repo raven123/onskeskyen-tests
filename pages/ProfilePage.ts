@@ -2,11 +2,11 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 
 export class ProfilePage {
-  readonly page: Page;
-  readonly profileName: Locator;
-  readonly profileEmail: Locator;
-  readonly logoutButton: Locator;
-  readonly reservationsCard: Locator;
+  private readonly page: Page;
+  private readonly profileName: Locator;
+  private readonly profileEmail: Locator;
+  private readonly logoutButton: Locator;
+  private readonly reservationsCard: Locator;
 
 
   constructor(page: Page) {

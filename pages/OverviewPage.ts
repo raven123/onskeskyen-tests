@@ -2,23 +2,23 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 export class OverviewPage {
     //locators for the OverviewPage
-    readonly page: Page;
-    readonly addWishButton: Locator;
-    readonly friendsButton: Locator;
-    readonly profileButton: Locator;
-    readonly createWishListButton: Locator;
-    readonly friendWishlistCard: Locator;
-    readonly wishListCardMoreButton: Locator;
-    readonly reserveRequest: Locator;
-    readonly reserveConfirmation: Locator;
-    readonly itemReservedText: Locator;
-    readonly removeReservationButton: Locator;
-    readonly removeReservationConfirmation: Locator;
-    readonly giftGeneratorTab: Locator;
-    readonly createWishlistPopupHeader: Locator;
-    readonly createWishlistPopupConfirmButton: Locator;
-    readonly createWishlistName: Locator;
-    readonly wishlistSuccessMessage: Locator;
+    private readonly page: Page;
+    private readonly addWishButton: Locator;
+    private readonly friendsButton: Locator;
+    private readonly profileButton: Locator;
+    private readonly createWishListButton: Locator;
+    private readonly friendWishlistCard: Locator;
+    private readonly wishListCardMoreButton: Locator;
+    private readonly reserveRequest: Locator;
+    private readonly reserveConfirmation: Locator;
+    private readonly itemReservedText: Locator;
+    private readonly removeReservationButton: Locator;
+    private readonly removeReservationConfirmation: Locator;
+    private readonly giftGeneratorTab: Locator;
+    private readonly createWishlistPopupHeader: Locator;
+    private readonly createWishlistPopupConfirmButton: Locator;
+    private readonly createWishlistName: Locator;
+    private readonly wishlistSuccessMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -103,7 +103,7 @@ export class OverviewPage {
     }
     async assertRemoveReservationButtonVisible() {
         await expect(this.removeReservationButton).toBeVisible();
-    }       
+    }
     async assertRemoveReservationConfirmationVisible() {
         await expect(this.removeReservationConfirmation).toBeVisible();
     }

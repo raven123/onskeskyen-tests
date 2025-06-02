@@ -15,8 +15,8 @@ test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the
   await overviewPage.clickCreateWishListButton();
   await overviewPage.assertCreateWishlistPopupHeaderVisible();
   var randomWishlistName = await stringUtil.generateRandomString(15);
-  await overviewPage.createWishlistName.fill(randomWishlistName);
-  await overviewPage.createWishlistPopupConfirmButton.click();
+  await overviewPage.setWishlistName(randomWishlistName);
+  await overviewPage.clickCreateWishlistPopupConfirmButton();
   await overviewPage.assertCreateWishlistSuccessMessageIsVisible();
   await overviewPage.assertWishlistCardIsVisible(randomWishlistName);
 
@@ -28,7 +28,7 @@ test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the
   await wishlistOverviewPage.fillAddWishPopupUrlInput(process.env.PRODUCT_URL);
   await wishlistOverviewPage.assertAddWishModalHeaderIsVisible();
   var wishName = await wishlistOverviewPage.getAddWishModalNameText();
-  await wishlistOverviewPage.addWishModalSubmitButton.click();
+  await wishlistOverviewPage.clickAddWishModalSubmitButton();
   await wishlistOverviewPage.assertAddWishSuccessMessageIsVisible();
   await wishlistOverviewPage.assertNewWishCardIsVisible();
   await wishlistOverviewPage.assertWishCardTitleIsVisible(wishName);
@@ -38,7 +38,7 @@ test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the
   await wishlistOverviewPage.assertDeleteWishButtonIsVisible();
   await wishlistOverviewPage.clickDeleteWishButton();
   await wishlistOverviewPage.assertDeleteWishModalHeaderIsVisible();
-  await wishlistOverviewPage.clickDeleteWishButton();
+  await wishlistOverviewPage.clickDeleteWishModalDeleteWishButton();
   await wishlistOverviewPage.assertDeleteWishModalDeleteButtonIsVisible();
   await wishlistOverviewPage.clickDeleteWishModalDeleteButton();
   await wishlistOverviewPage.assertDeleteWishSuccessMessageIsVisible();

@@ -1,10 +1,10 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 export class ProductOverviewPage {
-    readonly page: Page;
-    readonly addToWishlistButton: Locator;
-    readonly selectWishList: Locator;
-    readonly wishSuccessMessage: Locator;
+    private readonly page: Page;
+    private readonly addToWishlistButton: Locator;
+    private readonly selectWishList: Locator;
+    private readonly wishSuccessMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -26,5 +26,5 @@ export class ProductOverviewPage {
     async assertAddToWishlistButtonIsVisible() {
         await expect(this.addToWishlistButton).toBeVisible();
     }
-    
+
 }

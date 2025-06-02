@@ -44,7 +44,7 @@
         "wishCardMoreButton": "xpath=//div[contains(@class,'WishCard__MoreButton')]/button[@data-testid='more-button-popover']",
         "deleteWishButton": "Delete wish",
         "deleteWishModalHeader": "xpath=//div[contains(@class,'ConfirmModal__Title')]",
-        "deleteWishModalDeleteWishButton": "xpath=//div[contains(@class,'DeleteWishModalContent__OptionElement') and text()='Delete wish']",
+        "deleteWishModalDeleteWishButton": "xpath=//div[contains(@class,'DeleteWishModalContent') and text()='Delete wish']",
         "deleteWishModalDeleteButton": "css=button#button-modal-submit",
         "deleteWishSuccessMessage": "Wish deleted successfully",
         "archiveWishlistButton": "Archive wishlist",

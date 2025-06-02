@@ -2,9 +2,9 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import locators from './locators.json';
 
 export class GiftGeneratorPage {
-    readonly page: Page;
-    readonly productGrid: Locator;
-    readonly productTitle: Locator;
+    private readonly page: Page;
+    private readonly productGrid: Locator;
+    private readonly productTitle: Locator;
     private productName: string;
 
 
