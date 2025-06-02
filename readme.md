@@ -20,44 +20,7 @@ For more detailed instructions, you can refer to the Playwright documentation.
 
 ## Project structure includes follwoing 
 
-├── env
-│   └── local.env
-├── fixtures
-│   ├── FriendFixture.ts
-│   ├── LoginFixture.ts
-│   └── WishListFixture.ts
-├── package-lock.json
-├── package.json
-├── pages
-│   ├── FriendPage.ts
-│   ├── GiftGeneratorPage.ts
-│   ├── HomePage.ts
-│   ├── LanguageSelectorPage.ts
-│   ├── locators.json
-│   ├── LoginPage.ts
-│   ├── OverviewPage.ts
-│   ├── ProductOverviewPage.ts
-│   ├── ProfilePage.ts
-│   └── WishlistOverviewPage.ts
-├── playwright-report
-│   └── index.html
-├── playwright.config.ts
-├── readme.md
-├── storageState.json
-├── test-results
-├── tests
-│   ├── friend.spec.ts
-│   ├── friend.spec.ts-snapshots
-│   │   ├── friend-card-chromium-darwin.png
-│   │   ├── friend-card-overview-chromium-darwin.png
-│   │   ├── friends-list-after-removal-chromium-darwin.png
-│   │   └── friends-list-initial-chromium-darwin.png
-│   └── wishlist.spec.ts
-├── tsconfig.json
-└── utils
-    ├── global-setup.ts
-    ├── LoginHelper.ts
-    └── StringUtil.ts
+![tree](image.png)
 
 ## Implementation includes :
 
