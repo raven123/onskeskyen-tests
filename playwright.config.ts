@@ -33,7 +33,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-    headless: false, // Run tests in headless mode by default
+    headless: true, // Run tests in headless mode by default
 
     storageState: 'storageState.json', // Use the storage state from the global setup
 
