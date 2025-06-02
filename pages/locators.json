@@ -1,0 +1,94 @@
+{
+    "homePage": {
+        "changeLanguageButton": "navbarLanguageSelector",
+        "loginButton": "Log in",
+        "selectedLanguage": "css=div[data-testid='navbarLanguageSelector']>div",
+        "loginWithEmailButton": "css=button[data-cy='registerNameNextButton']",
+        "dismissCookieBannerButton": "css=button#declineButton"
+    },
+    "loginPage": {
+        "emailField": "css=input[data-cy='signupEmailInput']",
+        "passwordField": "loginPasswordInput",
+        "loginButton": "css=button[data-cy='registerNameNextButton']",
+        "forgotPasswordLink": "css=div[data-cy='forgotPasswordButton']",
+        "errorMessage": "css=span[data-cy='login-error-message']"
+    },
+    "overviewPage": {
+        "newWishButton": "new-wish-btn",
+        "friendsButton": "navbarFriendsIcon",
+        "profileButton": "css=button[data-cy='navbarUserProfileAvatar']",
+        "createWishListButton": "css=img[alt='Create wishlist button']",
+        "createWishlistPopupHeader": "xpath=//h1[contains(@class,'CreateOrEditWishlist__Title')]",
+        "createWishlistPopupConfirmButton": "createWishlistSubmitButton",
+        "createWishlistName": "create-wishlist-title-input",
+        "friendWishlistCard": "wl-My wishlist",
+        "wishListCardMoreButton": "xpath=//img[@data-testid='moreButton']",
+        "reserveRequest": "xpath=//font[contains(text(),'Reserve request')]",
+        "reserveConfirmation": "xpath=//font[contains(text(),'You have reserved 1 of the')]",
+        "itemReservedText": "xpath=//font[contains(text(),'Reserved by me')]",
+        "removeReservationButton": "xpath=//font[contains(text(),'Remove reservation')]",
+        "removeReservationConfirmation": "xpath=//font[text()='The reservation for the request was removed.']",
+        "giftGeneratorTab": "navbarGiftGenerator",
+        "wishlistSuccessMessage": "Wishlist created successfully"
+    },
+    "wishlistOverviewPage":{
+        "moreButton": "wishlistMoreButton",
+        "newWishCard": "css=div#new-wish-card-div",
+        "addWishPopupHeader": "xpath=//h2[contains(@class,'SearchState__Title')]",
+        "addWishPopupUrlInput": "css=input[data-cy='new-wish-input-automatic']",
+        "addWishModalHeader": "xpath=//h1[contains(@class,'ModalHeader__Title')]",
+        "addWishModalSubmitButton": "new-wish-form-submit-btn",
+        "addWishModalNameText": "new-wish-form-title-input",
+        "addWishSuccessMessage": "css=span[data-cy='wish-created-message']",
+        "wishCardTitle": "xpath=//div[contains(@class,'WishCard__WishTitle')]",
+        "wishCardMoreButton": "xpath=//div[contains(@class,'WishCard__MoreButton')]/button[@data-testid='more-button-popover']",
+        "deleteWishButton": "Delete wish",
+        "deleteWishModalHeader": "xpath=//div[contains(@class,'ConfirmModal__Title')]",
+        "deleteWishModalDeleteWishButton": "xpath=//div[contains(@class,'DeleteWishModalContent__OptionElement') and text()='Delete wish']",
+        "deleteWishModalDeleteButton": "css=button#button-modal-submit",
+        "deleteWishSuccessMessage": "Wish deleted successfully",
+        "archiveWishlistButton": "Archive wishlist",
+        "archiveWishlistModalHeader": "xpath=//div[contains(@class,'ArchiveWishlistModalContent__Container')]",
+        "archiveWishlistModalArchiveButton": "xpath=//button/span[text()='Archive']",
+        "archiveWishlistSuccessMessage": "Wishlist archived successfully"
+
+    },
+
+    "languageSelectorPage": {
+        "englishSelector": "English",
+        "backButton": "css=button[name='back button']"
+    },
+    "friendsPage": {
+        "header": "css=div.ant-drawer-title",
+        "searchField": "search-input",
+        "friendName": "xpath=//div[contains(@class, 'FriendCard__FriendName')]",
+        "addFriendButton": "xpath=//div[contains(@class, 'FriendCard__Icon')]",
+        "pendingStateText": "Pending...",
+        "pendingRequestsButton": "xpath=//button/span[contains(text(), 'Pending')]",
+        "requestsTab": "xpath=//div[contains(@id,'Requests')]",
+        "pendingRequestsCount": "css=span.ant-scroll-number-only-unit.current",
+        "confirmRequestButton": "xpath=//div[contains(@class,'FriendCard__Container')]//button[contains(@class,'GradientButton')]",
+        "friendsTab": "xpath=//div[contains(@id,'Default') and @class='ant-tabs-tab-btn']",
+        "friendCard": "xpath=//div[contains(@class,'FriendCard__Container')]",
+        "moreButton": "xpath=//div[contains(@class,'FriendCard')]/button[contains(@class,'MoreButton__PopoverTriggerButton')]",
+        "removeFriendButton": "xpath=//div[text()='Fjern denne ven']",
+        "removeFriendPopupHeader": "xpath=//h2[contains(@class,'DeleteModalContent__Title')]",
+        "removeFriendButtonOnPopup": "xpath=//button/span[text()='Fjern denne ven']",
+        "closeButton": "css=div[data-cy='drawerCloseIcon']"
+    },
+    "profilePage": {
+        "profileName": "xpath=//span[contains(@class,'UserFullName')]/font/font",
+        "profileEmail": "xpath=//span[contains(@class,'UserEmail')]/font/font",
+        "logoutButton": "Log out",
+        "reservationsCard": "Reservations"
+    },
+    "giftGeneratorPage": {
+        "productGrid": "xpath=//div[@data-testid='wishCardContainer']",
+        "productTitle": "xpath=//div[contains(@class,'ProductItem__ProductTitle')]/font/font"
+    },
+    "productOverviewPage": {
+        "addToWishlistButton": "xpath=//div[contains(@class,'ProductMatchCard__CloudIconWrapper')]",
+        "selectWishList": "select-wishlist-list-item-0",
+        "wishSuccessMessage": "xpath=//div[contains(@class,'ant-message-success')]/span/font/font"
+    }
+}
