@@ -2,22 +2,22 @@ import { test as base } from '@playwright/test';
 import { OverviewPage } from '../pages/OverviewPage';
 import { WishlistOverviewPage }  from '../pages/WishlistOverviewPage';
 
-type MyFixtures = {
+type WishListFixture = {
   overviewPage: OverviewPage;
   wishlistOverviewPage: WishlistOverviewPage;
 };
 
-export const test = base.extend<MyFixtures>({
+export const test = base.extend<WishListFixture>({
   
   overviewPage: async ({ page }, use) => {
     // Set up the fixture.
-    const overviewPage = new OverviewPage(page);
+    var overviewPage = new OverviewPage(page);
     await use(overviewPage);
 
   },
   wishlistOverviewPage: async ({ page }, use) => {
     // Set up the fixture.
-    const wishlistOverviewPage = new WishlistOverviewPage(page);
+    var wishlistOverviewPage = new WishlistOverviewPage(page);
     await use(wishlistOverviewPage);
   }
 

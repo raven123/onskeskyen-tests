@@ -8,16 +8,16 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: path.resolve('../env/local.env') });
 
 // Declare the types of your fixtures.
-type MyFixtures = {
+type LoginFixtures = {
   loginPage: LoginPage;
 };
 
 // Extend base test by providing "todoPage" and "settingsPage".
 // This new "test" can be used in multiple test files, and each of them will get the fixtures.
-export const test = base.extend<MyFixtures>({
+export const test = base.extend<LoginFixtures>({
   loginPage: async ({ page }, use) => {
     // Set up the fixture.
-    const loginPage = new LoginPage(page);
+    var loginPage = new LoginPage(page);
     
     await loginPage.login(process.env.USER1_EMAIL!, process.env.USER1_PASSWORD!);
 

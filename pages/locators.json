@@ -81,12 +81,11 @@
         "reservationsCard": "Reservations"
     },
     "giftGeneratorPage": {
-        "productGrid": "xpath=//div[@data-testid='wishCardContainer']",
-        "productTitle": "xpath=//div[contains(@class,'ProductItem__ProductTitle')]/font/font"
+        "productGrid": "css=div[data-testid='brand-popular-products-grid']>div>div",
+        "productTitle": "xpath=//div[contains(@class,'ProductItem__ProductTitle')]"
     },
     "productOverviewPage": {
         "addToWishlistButton": "xpath=//div[contains(@class,'ProductMatchCard__CloudIconWrapper')]",
-        "selectWishList": "select-wishlist-list-item-0",
-        "wishSuccessMessage": "xpath=//div[contains(@class,'ant-message-success')]/span/font/font"
+        "wishSuccessMessage": "css=div.ant-message-success>span"
     }
 }

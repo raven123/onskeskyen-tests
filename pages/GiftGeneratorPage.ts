@@ -13,14 +13,14 @@ export class GiftGeneratorPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.productGrid = page.locator(locators.giftGeneratorPage.productGrid);
-        this.productTitle = page.locator(locators.giftGeneratorPage.productTitle);
+        this.productGrid = page.locator(locators.giftGeneratorPage.productGrid).first();
+        this.productTitle = page.locator(locators.giftGeneratorPage.productTitle).first();
     }
 
     /**
      *  method to assert if the product grid is visible
      */
-    async verifyProductGridIsVisible() {
+    async assertProductGridIsVisible() {
         await expect(this.productGrid).toBeVisible();
     }
 
@@ -28,9 +28,9 @@ export class GiftGeneratorPage {
      *  Method to select first product from the Grid
      */
     async selectFirstProductFromGrid() {
-        const firstProduct = this.productGrid.first();
+        const firstProduct = this.productGrid;
         await expect(firstProduct).toBeVisible();
-        this.productName = await this.productTitle.first().textContent();
+        this.productName = await this.productTitle.textContent();
         await firstProduct.click();
     }
 

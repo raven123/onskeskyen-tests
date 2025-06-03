@@ -7,18 +7,16 @@ import locators from './locators.json';
 export class ProductOverviewPage {
     private readonly page: Page;
     private readonly addToWishlistButton: Locator;
-    private readonly selectWishList: Locator;
     private readonly wishSuccessMessage: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.addToWishlistButton = page.locator(locators.productOverviewPage.addToWishlistButton);
-        this.selectWishList = page.getByTestId(locators.productOverviewPage.selectWishList);
-        this.wishSuccessMessage = page.locator(locators.productOverviewPage.wishSuccessMessage);
+        this.addToWishlistButton = page.locator(locators.productOverviewPage.addToWishlistButton).first();
+        this.wishSuccessMessage = page.locator(locators.productOverviewPage.wishSuccessMessage).nth(1);
     }
 
     /**
-     *  method to click the "Add to Wishlist" button
+     *  method to click the "Add to Wishlist" button from the first suggestion site
      */
     async addToWishlist() {
         await this.addToWishlistButton.click();
@@ -29,7 +27,8 @@ export class ProductOverviewPage {
      * @param wishlistName - The name of the wishlist to select
      */
      async selectWishlistByName(wishlistName: string) {
-        await this.selectWishList.selectOption({ label: wishlistName });
+        await expect(this.page.getByText(wishlistName)).toBeEnabled();
+        await this.page.getByText(wishlistName).click();
     }
 
    /**
@@ -40,6 +39,8 @@ export class ProductOverviewPage {
     async verifyWishSuccessMessage(expectedMessage: string) {
         await expect(this.wishSuccessMessage).toBeVisible();
         await expect(this.wishSuccessMessage).toHaveText(expectedMessage);
+        // adding screenshot asserttion 
+        await expect(this.wishSuccessMessage).toHaveScreenshot('wish-added-success.png');
     }
 
     /**
