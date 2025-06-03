@@ -18,15 +18,10 @@ test('Add a friend, confirm the request and then remove friend from the list',{t
 
   await friendPage.assertHeader();
   await friendPage.removeFriendIfExists(SEARCH_TEXT);
-  // screenshot assertion to store initial state before adding a friend
-  await expect(page).toHaveScreenshot('friends-list-initial.png');
 
   await friendPage.searchForFriend(SEARCH_TEXT);
   await friendPage.assertFriendNameIsVisible(SEARCH_TEXT);
   await friendPage.assertAddFriendButtonIsVisible();
-
-  // Asssert that the friend card is visible before adding
-  await expect(page).toHaveScreenshot('friend-card-overview.png');
 
   await friendPage.addFriend();
   await friendPage.clickCloseButton();
@@ -41,7 +36,6 @@ test('Add a friend, confirm the request and then remove friend from the list',{t
   
   await languageSelectorPage.assertEnglishSelectorVisible();
   await languageSelectorPage.selectEnglishLanguage();
-
 
   await homePage.assertSelectedLanguage(language);
   await homePage.assertLoginButtonVisible();

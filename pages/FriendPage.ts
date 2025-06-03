@@ -47,6 +47,8 @@ export class FriendPage {
 
     async assertAddFriendButtonIsVisible() {
         await expect(this.addFriendButton).toBeVisible();
+        // Adding screenshot assertion for Add Friend button
+        await expect(this.addFriendButton).toHaveScreenshot('add_friend_button.png');
     }
 
     async assertHeader() {
@@ -61,6 +63,8 @@ export class FriendPage {
     async assertFriendNameIsVisible(name: string) {
         await expect(this.friendName).toBeVisible();
         await expect(this.friendName).toHaveText(name);
+        // Adding screenshot assertion for friend name
+        await expect(this.friendName).toHaveScreenshot('friend_name.png');
     }
 
     async clickPendingRequestsButton() {
@@ -81,6 +85,9 @@ export class FriendPage {
     }
 
     async confirmFriendRequest() {
+        // add screenshot assertion for confirm request button
+        await expect(this.confirmRequestButton).toBeVisible();
+        await expect(this.confirmRequestButton).toHaveScreenshot('confirm_request_button.png');
         await this.confirmRequestButton.click();
     }
 
@@ -90,6 +97,8 @@ export class FriendPage {
 
     async assertFriendCardIsVisible() {
         await expect(this.friendCard).toBeVisible();
+        // Adding screenshot assertion for friend card 
+        await expect(this.friendCard).toHaveScreenshot('friend_card.png');
     }
 
     async clickMoreButton() {
@@ -114,6 +123,8 @@ export class FriendPage {
 
     async clickRemoveFriendButtonOnPopup() {
         await this.removeFriendButtonOnPopup.click();
+        // Adding screenshot assertion for remove friend button on popup
+        await expect(this.removeFriendButtonOnPopup).toHaveScreenshot('remove_friend_button_on_popup.png');
     }
 
     async assertCloseButtonIsVisible() {
@@ -137,6 +148,6 @@ export class FriendPage {
             await this.assertRemoveFriendPopupIsVisible();
             await this.clickRemoveFriendButtonOnPopup();
             await this.page.getByText(name).waitFor({ state: 'hidden' });
-        }  
+        }
     }
 }

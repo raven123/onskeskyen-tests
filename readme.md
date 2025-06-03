@@ -28,8 +28,7 @@ For more detailed instructions, you can refer to the Playwright documentation.
 2. Authentication handled using global-setup.ts and stored in storageState.json
 3. Playwright fixtures FriendFixture.ts and WishListFixture.ts for both the specs
 4. Github action workflow created using playwright.yml file
-5. Screenshot assertion added as a trial (haven't implemented this before) but not sure about its exact use as it fails the test first time if snapshots are not there. using --update-snapshots argument while running tests fixes that
-
+5. Screenshot assertion added as a trial for element level snapshots
 ## Execution 
 Execute the spec files by running the following command
     ``` npx playwright test ```  or  ``` npx playwright test --update-snapshots``` 
