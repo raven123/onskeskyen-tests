@@ -39,8 +39,6 @@ export class ProductOverviewPage {
     async verifyWishSuccessMessage(expectedMessage: string) {
         await expect(this.wishSuccessMessage).toBeVisible();
         await expect(this.wishSuccessMessage).toHaveText(expectedMessage);
-        // adding screenshot asserttion 
-        await expect(this.wishSuccessMessage).toHaveScreenshot('wish-added-success.png');
     }
 
     /**

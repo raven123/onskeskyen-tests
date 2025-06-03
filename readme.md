@@ -17,6 +17,7 @@ For more detailed instructions, you can refer to the Playwright documentation.
 
 1. Add a friend, confirm a friend from pending request and then remove the friend from the list
 2. Create a Wishlist, add a wish in that wishlist, delete Wish and archive the Wishlist
+3. Add wish from gift generator product list
 
 ## Project structure includes following 
 

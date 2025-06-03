@@ -50,7 +50,6 @@ test('Add a wishlist, add a Wish inside that wishlist,  then archive it from the
   await wishlistOverviewPage.assertArchiveWishlistModalHeaderIsVisible();
   await wishlistOverviewPage.assertArchiveWishlistModalArchiveButtonIsVisible();
   await wishlistOverviewPage.clickArchiveWishlistModalArchiveButton();
-  await wishlistOverviewPage.assertArchiveWishlistSuccessMessageIsVisible();
   // assert that the wishlist is archived
-
+  await wishlistOverviewPage.assertArchiveWishlistSuccessMessageIsVisible();
 });
