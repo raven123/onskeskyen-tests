@@ -4,8 +4,13 @@ import { HomePage } from '../pages/HomePage';
 import { LanguageSelectorPage } from '../pages/LanguageSelectorPage';
 import { OverviewPage } from '../pages/OverviewPage';
 
-
-
+/**
+ * Logs in a user with the provided email and password, and sets the language.
+ * @param {BrowserContext} context - The Playwright browser context.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * @param {string} [language='English'] - The language to set (default is 'English').
+ */
 export async function loginWithUser(context: BrowserContext, email: string, password: string, language: string = 'English') {
   const page = await context.newPage();
   const loginPage = new LoginPage(page);
