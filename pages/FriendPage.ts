@@ -18,7 +18,6 @@ export class FriendPage {
     private readonly removeFriendPopupHeader: Locator;
     private readonly removeFriendButtonOnPopup: Locator;
     private readonly closeButton: Locator;
-    private readonly pendingStateText: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -37,7 +36,6 @@ export class FriendPage {
         this.removeFriendPopupHeader = page.locator(locators.friendsPage.removeFriendPopupHeader);
         this.removeFriendButtonOnPopup = page.locator(locators.friendsPage.removeFriendButtonOnPopup);
         this.closeButton = page.locator(locators.friendsPage.closeButton);
-        this.pendingStateText = page.getByText(locators.friendsPage.pendingStateText);
     }
 
 

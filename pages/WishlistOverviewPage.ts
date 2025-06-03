@@ -10,7 +10,6 @@ export class WishlistOverviewPage {
     private readonly addWishModalHeader: Locator;
     private readonly addWishModalSubmitButton: Locator;
     private readonly addWishModalNameText: Locator;
-    private readonly wishCardTitle: Locator;
     private readonly wishCardMoreButton: Locator;
     private readonly deleteWishButton: Locator;
     private readonly deleteWishModalHeader: Locator;
@@ -32,7 +31,6 @@ export class WishlistOverviewPage {
         this.addWishModalHeader = page.locator(locators.wishlistOverviewPage.addWishModalHeader);
         this.addWishModalSubmitButton = page.getByTestId(locators.wishlistOverviewPage.addWishModalSubmitButton);
         this.addWishModalNameText = page.getByTestId(locators.wishlistOverviewPage.addWishModalNameText);
-        this.wishCardTitle = page.locator(locators.wishlistOverviewPage.wishCardTitle);
         this.wishCardMoreButton = page.locator(locators.wishlistOverviewPage.wishCardMoreButton);
         this.deleteWishButton = page.getByText(locators.wishlistOverviewPage.deleteWishButton);
         this.deleteWishModalHeader = page.locator(locators.wishlistOverviewPage.deleteWishModalHeader);

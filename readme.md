@@ -30,11 +30,8 @@ For more detailed instructions, you can refer to the Playwright documentation.
 4. Github action workflow created using playwright.yml file
 5. Screenshot assertion added as a trial for element level snapshots
 ## Execution 
-Execute the spec files by running the following command
+Execute the spec files by running the following commands (2nd one if you need to update screenshots)
     ``` npx playwright test ```  or  ``` npx playwright test --update-snapshots``` 
-
-
-
 
 
 

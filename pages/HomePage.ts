@@ -9,7 +9,6 @@ export class HomePage {
     private readonly loginWithEmailButton: Locator;
     private readonly declineCookiesButton: Locator;
 
-    //Ønskeskyen |  Danmarks mest populære ønske- og huskeliste : title
     constructor(page: Page) {
         this.page = page;
         this.changeLanguageButton = page.getByTestId(locators.homePage.changeLanguageButton);
